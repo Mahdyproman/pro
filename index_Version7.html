@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro & Care | شركة تنظيف وصيانة العقبة</title>
+  <meta name="description" content="شركة Pro & Care لتنظيف وصيانة العقبة - عروض وخدمات تنظيف وصيانة حديثة.">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;400&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Cairo', sans-serif; background: #f7f8fa; color: #222; margin: 0; padding: 0;}
+    header { background: linear-gradient(90deg, #0AC9C7 60%, #1b3d60 100%); padding: 18px 0 12px 0; text-align: center; box-shadow: 0 2px 8px #e0e0e0;}
+    .logo { max-height: 70px; margin-bottom: 10px;}
+    nav { margin: 10px 0 0 0;}
+    nav a { color: #fff; margin: 0 12px; text-decoration: none; font-weight: 700; font-size: 1.05em; transition: color 0.2s;}
+    nav a:hover { color: #ffd700;}
+    .hero { padding: 44px 18px 35px 18px; text-align: center; background: #fff;}
+    .hero h1 { font-size: 2.3em; color: #0AC9C7; margin-bottom: 10px;}
+    .hero p { font-size: 1.19em; color: #333; margin-bottom: 28px;}
+    .btn-main { background: linear-gradient(90deg, #0AC9C7 70%, #1b3d60 100%); color: #fff; padding: 13px 38px; font-size: 1.08em; border: none; border-radius: 30px; font-weight: 700; cursor: pointer; box-shadow: 0 2px 8px #e4e4e4; transition: background 0.2s;}
+    .btn-main:hover { background: linear-gradient(90deg, #1b3d60 60%, #0AC9C7 100%);}
+    .section { padding: 37px 8px; margin: 28px auto; background: #fff; border-radius: 18px; box-shadow: 0 2px 16px #f3f3f3; max-width: 1100px;}
+    .section-title { color: #1b3d60; font-size: 1.6em; text-align: center; margin-bottom: 30px; font-weight: 700;}
+    .about-list {list-style: none; padding: 0; margin-top: 10px; display: flex; flex-wrap: wrap; gap: 18px; justify-content: center;}
+    .about-list li { background: #f5fafd; border-radius: 10px; box-shadow: 0 1px 6px #e6e6e6; padding: 16px 28px; font-size: 1.1em; color: #0AC9C7; min-width: 180px;}
+    .services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; margin-top: 10px;}
+    .service-card { background: #f4f9fa; border-radius: 12px; box-shadow: 0 2px 12px #e6e6e6; padding: 22px 18px; text-align: center; width: 230px; transition: transform 0.17s;}
+    .service-card:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 4px 24px #d1f2f2;}
+    .service-icon { font-size: 2.6em; margin-bottom: 12px; color: #0AC9C7;}
+    .service-title { font-size: 1.13em; font-weight: 700; color: #1b3d60; margin-bottom: 7px;}
+    .service-desc { color: #444; font-size: 1em;}
+    .booking-form { max-width: 420px; margin: 0 auto; background: #f4f9fa; border-radius: 13px; box-shadow: 0 2px 10px #ececec; padding: 30px 20px 18px 20px;}
+    .booking-form label { font-weight: 700; color: #1b3d60; display: block; margin-bottom: 6px;}
+    .booking-form input, .booking-form select, .booking-form textarea { width: 100%; padding: 9px 8px; margin-bottom: 17px; border: 1px solid #c1e7e7; border-radius: 6px; font-size: 1.02em; font-family: 'Cairo', sans-serif; box-sizing: border-box; background: #fff; resize: none;}
+    .booking-form textarea { min-height: 60px; max-height: 150px;}
+    .booking-form button { width: 100%; margin-top: 5px;}
+    .success-message { color: #0AC9C7; font-size: 1.16em; margin-top: 8px; text-align: center; font-weight: 700;}
+    .contact-info { text-align: center;}
+    .contact-info a { color: #0AC9C7; text-decoration: none; font-weight: 700; margin: 0 8px; transition: color 0.2s;}
+    .contact-info a:hover { color: #1b3d60;}
+    .map-container { margin: 20px 0 0 0; border-radius: 11px; overflow: hidden; box-shadow: 0 2px 8px #e0e0e0;}
+    /* عروض */
+    .offers-grid { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center;}
+    .offer-card { background: #e3fcfb; border: 2px solid #0AC9C7; border-radius: 12px; box-shadow: 0 2px 10px #e4e4e4; padding: 18px 22px 13px 22px; min-width: 210px; max-width: 290px; margin-bottom: 10px; position:relative;}
+    .offer-title { color: #1b3d60; font-size: 1.13em; font-weight: 700; margin-bottom: 5px;}
+    .offer-desc { color: #075e5c; font-size: 1em;}
+    .offer-expiry { color: #b20000;font-size:0.98em;margin-top:8px;}
+    .offer-remove { position:absolute; top:7px; left:7px; background:#ff4545; color:#fff; border:none; border-radius:50%; font-size:1.09em; width:28px; height:28px; cursor:pointer; display:none;}
+    .offer-card.admin .offer-remove {display:block;}
+    .offers-admin-btn {display:block; text-align:center; margin:0 auto 9px auto;}
+    .offers-admin-btn button {background:#1b3d60; color:#fff; border:none; border-radius:7px; font-size:1em; padding:6px 20px; cursor:pointer;}
+    #add-offer-form {max-width:350px;background:#f6ffff;border-radius:10px;box-shadow:0 2px 7px #b7e7e7;padding:15px 18px;margin:14px auto 22px auto;}
+    #add-offer-form label {font-weight:700;margin-bottom:2px;}
+    #add-offer-form input, #add-offer-form textarea {margin-bottom:11px;}
+    #add-offer-form button {width:100%; border-radius:7px;}
+    /* مميزات الشركة */
+    .features-list {display:flex;flex-wrap:wrap;gap:22px;justify-content:center;}
+    .feature-box {background:#f7fafd;border-radius:12px;box-shadow:0 1px 8px #e0e0e0;padding:18px 14px;width:210px;text-align:center;}
+    .feature-icon {font-size:2.2em;color:#0AC9C7;margin-bottom:8px;}
+    .feature-title {font-size:1.12em;font-weight:700;color:#1b3d60;}
+    .feature-desc {font-size:1em;color:#376868;}
+    /* لماذا نحن */
+    .whyus-grid {display:flex;flex-wrap:wrap;gap:18px;justify-content:center;}
+    .whyus-box {background:#e9f9f9;border-radius:14px;box-shadow:0 1px 8px #e0e0e0;padding:18px 16px;width:260px;text-align:center;}
+    .whyus-title {font-size:1.13em;font-weight:700;color:#0AC9C7;margin-bottom:7px;}
+    .whyus-desc {font-size:1em;color:#1b3d60;}
+    /* الوضع الليلي */
+    .dark-mode { background: #191b1f !important; color:#dadada !important;}
+    .dark-mode .section, .dark-mode .hero, .dark-mode .offer-card, .dark-mode .feature-box, .dark-mode .whyus-box { background:#26292f !important; color:#f3f3f3 !important;}
+    .dark-mode .btn-main, .dark-mode .offers-admin-btn button { background: linear-gradient(90deg,#0AC9C7 70%,#1b3d60 100%) !important; color:#fff !important;}
+    .dark-mode .offer-title, .dark-mode .section-title, .dark-mode .feature-title, .dark-mode .whyus-title { color:#0AC9C7 !important;}
+    .dark-mode .offer-desc, .dark-mode .feature-desc, .dark-mode .whyus-desc { color:#67f8f6 !important;}
+    @media (max-width: 800px) {
+      .services-grid { flex-direction: column; align-items: center; }
+      .service-card { width: 98%; }
+      .section { padding: 18px 3vw; }
+      .feature-box, .whyus-box {width:98vw;max-width:340px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://www2.0zz0.com/2025/09/13/05/659409787.png" alt="Pro & Care Logo" class="logo">
+    <nav>
+      <a href="#about">من نحن</a>
+      <a href="#services">خدماتنا</a>
+      <a href="#offers">العروض</a>
+      <a href="#features">مميزاتنا</a>
+      <a href="#whyus">لماذا نحن؟</a>
+      <a href="#booking">احجز خدمة</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Pro & Care</h1>
+    <p>شركة تنظيف وصيانة عامة في العقبة، خدمات احترافية وعروض حصرية.</p>
+    <a href="#booking" class="btn-main">احجز الآن</a>
+  </section>
+  <section id="about" class="section">
+    <div class="section-title">من نحن</div>
+    <p style="text-align:center; max-width:650px; margin:0 auto 14px auto;">
+      <b>Pro & Care</b> شركة متخصصة في خدمات التنظيف والصيانة العامة في العقبة. نعمل بأحدث التقنيات، فريقنا مدرب وملتزم بمعايير الجودة والأمان.
+    </p>
+    <ul class="about-list">
+      <li>خدمة سريعة وموثوقة</li>
+      <li>أسعار منافسة</li>
+      <li>معدات حديثة</li>
+      <li>دعم متواصل</li>
+    </ul>
+  </section>
+  <section id="services" class="section">
+    <div class="section-title">خدماتنا</div>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">🏠</div><div class="service-title">تنظيف المنازل</div><div class="service-desc">تنظيف شامل للفلل والشقق بأحدث المعدات.</div></div>
+      <div class="service-card"><div class="service-icon">🏢</div><div class="service-title">تنظيف المكاتب والشركات</div><div class="service-desc">تنظيف دوري ومخصص للمكاتب والمنشآت.</div></div>
+      <div class="service-card"><div class="service-icon">🧽</div><div class="service-title">تنظيف الخزانات</div><div class="service-desc">تنظيف وتعقيم خزانات المياه بأمان.</div></div>
+      <div class="service-card"><div class="service-icon">🛠️</div><div class="service-title">صيانة عامة</div><div class="service-desc">كهرباء وسباكة وتكييف بأيدي مختصين.</div></div>
+      <div class="service-card"><div class="service-icon">🪟</div><div class="service-title">تنظيف الزجاج والواجهات</div><div class="service-desc">تنظيف احترافي للنوافذ والواجهات الخارجية.</div></div>
+    </div>
+  </section>
+  <section id="offers" class="section">
+    <div class="section-title">العروض والخصومات</div>
+    <div class="offers-grid" id="offersList"></div>
+    <div class="offers-admin-btn">
+      <button onclick="showOfferAdmin()">إدارة العروض</button>
+    </div>
+    <form id="add-offer-form" style="display:none;">
+      <label>عنوان العرض</label>
+      <input type="text" id="offerTitle" required>
+      <label>وصف العرض</label>
+      <textarea id="offerDesc" required></textarea>
+      <label>تاريخ انتهاء العرض</label>
+      <input type="date" id="offerExpiry" required>
+      <button type="submit" class="btn-main">إضافة العرض</button>
+    </form>
+    <!-- block to show/export current offers in JSON for admin copy-paste -->
+    <div id="export-offers" style="display:none;">
+      <textarea id="offers-json" style="width:99%;height:120px;direction:ltr;background:#f7f7f7;color:#0AC9C7;font-family:monospace;margin-top:8px;border-radius:7px;border:1px solid #eee;"></textarea>
+      <div style="color:#1b3d60;font-size:0.98em;margin:7px 0 0 0;">انسخ هذا الكود وضعه بدل متغير <b>offersData</b> في الكود ثم ارفع الملف على Netlify ليظهر للجميع.</div>
+    </div>
+  </section>
+  <section id="features" class="section">
+    <div class="section-title">مميزاتنا</div>
+    <div class="features-list">
+      <div class="feature-box">
+        <div class="feature-icon">⏱️</div>
+        <div class="feature-title">سرعة الاستجابة</div>
+        <div class="feature-desc">خدمة فورية في جميع مناطق العقبة.</div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon">🛡️</div>
+        <div class="feature-title">جودة وأمان</div>
+        <div class="feature-desc">مواد معتمدة وآمنة وصديقة للبيئة.</div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon">👷‍♂️</div>
+        <div class="feature-title">فريق محترف</div>
+        <div class="feature-desc">عاملون مدربون على أعلى مستوى.</div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon">💲</div>
+        <div class="feature-title">أسعار منافسة</div>
+        <div class="feature-desc">عروض وخصومات موسمية مغرية.</div>
+      </div>
+    </div>
+  </section>
+  <section id="whyus" class="section">
+    <div class="section-title">لماذا نحن؟</div>
+    <div class="whyus-grid">
+      <div class="whyus-box">
+        <div class="whyus-title">ضمان الرضا</div>
+        <div class="whyus-desc">لا تدفع حتى تتأكد من رضاك التام عن الخدمة!</div>
+      </div>
+      <div class="whyus-box">
+        <div class="whyus-title">خدمة عملاء 24/7</div>
+        <div class="whyus-desc">فريق دعم جاهز لأي استفسار أو طارئ.</div>
+      </div>
+      <div class="whyus-box">
+        <div class="whyus-title">تنظيف شامل</div>
+        <div class="whyus-desc">نهتم بأدق التفاصيل ونستخدم أحدث المعدات.</div>
+      </div>
+    </div>
+  </section>
+  <section id="booking" class="section">
+    <div class="section-title">احجز خدمة تنظيف الآن</div>
+    <form class="booking-form" id="bookingForm" action="https://formsubmit.co/procarehero@gmail.com" method="POST">
+      <label for="name">الاسم الكامل</label>
+      <input type="text" id="name" name="name" required>
+      <label for="phone">رقم الهاتف</label>
+      <input type="tel" id="phone" name="phone" required placeholder="07XXXXXXXX" pattern="^(\\+?962|0)?7[789]\\d{7}$">
+      <div id="phone-error" style="color:#b20000;font-size:0.98em;display:none;margin-bottom:7px;">يرجى إدخال رقم أردني صحيح (07XXXXXXXX).</div>
+      <label for="service">نوع الخدمة</label>
+      <select id="service" name="service" required>
+        <option value="">اختر الخدمة</option>
+        <option>تنظيف منازل</option>
+        <option>تنظيف مكاتب</option>
+        <option>تنظيف خزانات</option>
+        <option>صيانة عامة</option>
+        <option>تنظيف الزجاج والواجهات</option>
+        <option>خدمة أخرى</option>
+      </select>
+      <label for="date">تاريخ الخدمة</label>
+      <input type="date" id="date" name="date" required>
+      <label for="address">العنوان</label>
+      <input type="text" id="address" name="address" required placeholder="العقبة - ...">
+      <label for="notes">ملاحظات إضافية</label>
+      <textarea id="notes" name="notes" placeholder="أي تفاصيل أو طلبات خاصة؟"></textarea>
+      <button type="submit" class="btn-main">إرسال الطلب</button>
+      <div id="successMessage" class="success-message" style="display:none;"></div>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="#booking-thankyou">
+    </form>
+    <div id="booking-thankyou" style="display:none;text-align:center;font-size:1.2em;color:#0AC9C7;margin-top:18px;">
+      تم استلام طلبك بنجاح! سنتواصل معك قريبًا لتأكيد الحجز.
+    </div>
+  </section>
+  <section id="contact" class="section">
+    <div class="section-title">تواصل معنا</div>
+    <div class="contact-info">
+      <div>
+        الهاتف: <a href="tel:0799999999">0799999999</a> | واتساب: <a href="https://wa.me/962799999999" target="_blank">اضغط هنا</a>
+      </div>
+      <div>العنوان: العقبة، الأردن</div>
+      <div style="margin:10px 0 0 0;">
+        البريد الإلكتروني: <a href="mailto:procarehero@gmail.com">procarehero@gmail.com</a>
+      </div>
+    </div>
+    <div class="map-container" style="max-width:430px;margin:22px auto 0 auto;">
+      <iframe src="https://www.google.com/maps?q=Aqaba,Jordan&output=embed" width="100%" height="250" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+  <footer style="padding:20px 0 14px 0;text-align:center;color:#999;font-size:1em;">
+    &copy; 2025 Pro & Care | جميع الحقوق محفوظة
+  </footer>
+  <!-- زر واتساب عائم -->
+  <a href="https://wa.me/962799999999" target="_blank"
+    style="position:fixed;bottom:18px;left:18px;z-index:9999;background:#25d366;color:white;padding:13px 19px;border-radius:50%;box-shadow:0 2px 8px #bbb;font-size:2em;text-align:center;">
+    <span style="font-family:sans-serif;">&#x1F4AC;</span>
+  </a>
+  <!-- زر الوضع الليلي -->
+  <button id="toggleDark"
+    style="position:fixed;bottom:85px;left:18px;z-index:9999;background:#222;color:#fff;border:none;border-radius:50%;padding:10px 13px;font-size:1.4em;box-shadow:0 2px 8px #bbb;cursor:pointer;">
+    &#9790;
+  </button>
+  <script>
+    // عروض للجميع (تغيير من الكود فقط)
+    var offersData = [
+      {
+        "title": "خصم 15% على تنظيف المنازل",
+        "desc": "احصل على خصم خاص عند حجز تنظيف منزلك هذا الشهر!",
+        "expiry": "2025-12-31"
+      },
+      {
+        "title": "تنظيف خزانات بسعر خاص",
+        "desc": "عروض حصرية لتنظيف وتعقيم الخزانات.",
+        "expiry": "2025-10-15"
+      }
+    ];
+    function renderOffers(adminMode) {
+      let html = '';
+      offersData.forEach((offer, i) => {
+        let expired = offer.expiry && new Date(offer.expiry) < new Date();
+        html += `<div class="offer-card${adminMode ? ' admin' : ''}${expired ? ' expired' : ''}">
+        ${adminMode ? '<button class="offer-remove" onclick="removeOffer(' + i + ')">&times;</button>' : ''}
+        <div class="offer-title">${offer.title}</div>
+        <div class="offer-desc">${offer.desc}</div>
+        <div class="offer-expiry">${offer.expiry ? 'ساري حتى: ' + offer.expiry : ''}${expired ? ' <b>(منتهي)</b>' : ''}</div>
+      </div>`;
+      });
+      document.getElementById('offersList').innerHTML = html || '<div style="text-align:center;color:#999;">لا يوجد عروض حالياً.</div>';
+      // Export JSON for admin
+      if (adminMode) {
+        document.getElementById('export-offers').style.display = 'block';
+        document.getElementById('offers-json').value = JSON.stringify(offersData, null, 2);
+      } else {
+        document.getElementById('export-offers').style.display = 'none';
+      }
+    }
+    renderOffers(false);
+    // إدارة العروض
+    let adminOn = false;
+    window.showOfferAdmin = function () {
+      if (!adminOn) {
+        let pass = prompt("أدخل كلمة المرور للإدارة:\n(مثال: 0102030405)");
+        if (pass !== "0102030405") return alert("كلمة المرور غير صحيحة.");
+      }
+      adminOn = true;
+      document.getElementById("add-offer-form").style.display = "block";
+      renderOffers(true);
+    }
+    window.removeOffer = function (idx) {
+      if (!adminOn) return;
+      offersData.splice(idx, 1);
+      renderOffers(true);
+      document.getElementById('offers-json').value = JSON.stringify(offersData, null, 2);
+    }
+    document.getElementById('add-offer-form').onsubmit = function (e) {
+      e.preventDefault();
+      let title = document.getElementById('offerTitle').value.trim();
+      let desc = document.getElementById('offerDesc').value.trim();
+      let expiry = document.getElementById('offerExpiry').value;
+      if (!title || !desc || !expiry) return alert("يرجى تعبئة جميع الحقول!");
+      offersData.unshift({ title, desc, expiry });
+      this.reset();
+      renderOffers(true);
+      document.getElementById('offers-json').value = JSON.stringify(offersData, null, 2);
+      alert("تمت إضافة العرض بنجاح! لا تنس نسخ الكود وتحديث الموقع.");
+    }
+    // ترك الإدارة
+    document.addEventListener('click', function (e) {
+      if (adminOn && !e.target.closest('#add-offer-form') && !e.target.closest('.offers-admin-btn') && !e.target.classList.contains('offer-remove')) {
+        adminOn = false;
+        document.getElementById('add-offer-form').style.display = "none";
+        renderOffers(false);
+      }
+    });
+
+    // الوضع الليلي
+    document.getElementById('toggleDark').onclick = function () {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? '1' : '0');
+    }
+    if (localStorage.getItem('darkMode') === '1') { document.body.classList.add('dark-mode'); }
+
+    // تحقق رقم الهاتف الأردني
+    const phoneInput = document.getElementById('phone');
+    const phoneError = document.getElementById('phone-error');
+    function validatePhone() {
+      // أرقام الأردن: 079/078/077 + 7 أرقام (أو +96279...)
+      let v = phoneInput.value.trim();
+      let re = /^(?:\+?962|0)?7[789]\d{7}$/;
+      if (!re.test(v)) {
+        phoneError.style.display = 'block';
+        phoneInput.style.borderColor = '#b20000';
+        return false;
+      } else {
+        phoneError.style.display = 'none';
+        phoneInput.style.borderColor = '#c1e7e7';
+        return true;
+      }
+    }
+    phoneInput.addEventListener('input', validatePhone);
+    document.getElementById('bookingForm').addEventListener('submit', function (e) {
+      if (!validatePhone()) {
+        e.preventDefault();
+        phoneInput.focus();
+        return false;
+      }
+      // لمنع تكرار رسالة النجاح بعد العودة من formsubmit
+      setTimeout(function(){
+        document.getElementById('bookingForm').style.display='none';
+        document.getElementById('booking-thankyou').style.display='block';
+      }, 100);
+    });
+    // إذا جاء من formsubmit#booking-thankyou
+    if (window.location.hash === "#booking-thankyou") {
+      document.getElementById('bookingForm').style.display = 'none';
+      document.getElementById('booking-thankyou').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
