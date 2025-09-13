@@ -273,29 +273,7 @@
     &#9790;
   </button>
   <script>
-    // رسالة تأكيد formsubmit.co عند دخول الموقع (تظهر مرة واحدة)
-    (function() {
-      var confirmId = "d46d3bf19e9527f46c4df43e9dc6a1ac";
-      if (!localStorage.getItem("formsubmit-confirmed-"+confirmId)) {
-        var confirmDiv = document.createElement("div");
-        confirmDiv.innerHTML = `
-          <div style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,172,199,0.10);z-index:99999;display:flex;align-items:center;justify-content:center;">
-            <div style="background:#fff;padding:38px 22px;border-radius:12px;box-shadow:0 2px 20px #0ac9c73a;max-width:350px;text-align:center;">
-              <div style="font-size:2.3em;color:#0AC9C7;margin-bottom:13px;">✅</div>
-              <div style="font-size:1.18em;color:#1b3d60;margin-bottom:10px;">تم التحقق من الموقع بواسطة <b>formsubmit.co</b></div>
-              <div style="font-size:0.98em;color:#066;">يمكنك الآن إرسال طلبك بثقة.<br>جميع البيانات مؤمنة ويتم إرسالها مباشرة لإدارة الشركة.</div>
-              <button id="closeConfirmMsg" style="margin-top:17px;background:#0AC9C7;color:#fff;border:none;border-radius:7px;padding:8px 28px;font-size:1.07em;cursor:pointer;">موافق</button>
-            </div>
-          </div>
-        `;
-        confirmDiv.id = "formsubmit-confirm-msg";
-        document.body.appendChild(confirmDiv);
-        document.getElementById("closeConfirmMsg").onclick = function() {
-          document.getElementById("formsubmit-confirm-msg").remove();
-          localStorage.setItem("formsubmit-confirmed-"+confirmId, "1");
-        }
-      }
-    })();
+
 
     // عروض للجميع (تغيير من الكود فقط)
     var offersData = [
